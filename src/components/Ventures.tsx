@@ -86,7 +86,7 @@ const individualVentures: Venture[] = [
     monogram: "AI",
     title: "AI Automations & Systems",
     description:
-      "Automate your workflow. Set up tools like OpenClo for your personal stack and daily operations.",
+      "Automate your workflow. Set up tools like OpenClaw for your personal stack and daily operations.",
     link: "/ai-automations",
     linkLabel: "Learn more",
     color: "violet",

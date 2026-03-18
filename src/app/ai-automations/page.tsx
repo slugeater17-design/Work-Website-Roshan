@@ -33,13 +33,13 @@ export default function AIAutomations() {
             Automate your workflow
           </h1>
           <p className="font-[family-name:var(--font-body)] text-lg text-muted leading-relaxed mb-8">
-            Set up tools like OpenClo for your personal stack and daily operations.
+            Set up tools like OpenClaw for your personal stack and daily operations.
             Build systems that work for you, not the other way around.
           </p>
         </motion.div>
       </section>
 
-      {/* What is OpenClo */}
+      {/* What is OpenClaw */}
       <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px] bg-surface">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,11 @@ export default function AIAutomations() {
           className="max-w-3xl mx-auto"
         >
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-6">
-            What is OpenClo?
+            What is OpenClaw?
           </h2>
           <p className="font-[family-name:var(--font-body)] text-base text-muted leading-relaxed mb-6">
-            OpenClo is a personal AI-powered automation system designed to streamline your daily operations.
-            From managing tasks to automating repetitive workflows, OpenClo helps you focus on what matters most.
+            OpenClaw is a personal AI-powered automation system designed to streamline your daily operations.
+            From managing tasks to automating repetitive workflows, OpenClaw helps you focus on what matters most.
           </p>
           <ul className="space-y-4">
             {[
