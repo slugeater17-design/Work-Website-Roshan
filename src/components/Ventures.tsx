@@ -58,8 +58,8 @@ const individualVentures: Venture[] = [
     title: "FreelanCA",
     description:
       "Your money, sorted. Invoicing, taxes & financial OS built for freelancers.",
-    link: "https://apps.apple.com/in/app/freelanca/id6755485025",
-    linkLabel: "Download on App Store",
+    link: "https://www.freelanca.creatingadam.in/",
+    linkLabel: "freelanca.creatingadam.in",
     color: "green",
     external: true,
   },
