@@ -3,6 +3,29 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const workflowSteps = [
+  {
+    step: 1,
+    title: "Free Consultation",
+    description: "You set up a free consultation with us. We understand your needs and identify automation opportunities.",
+  },
+  {
+    step: 2,
+    title: "Choose Your Hosting",
+    description: "Choose an appropriate hosting system — a local computer or cloud-based VPS depending on your requirements.",
+  },
+  {
+    step: 3,
+    title: "Configuration & Setup",
+    description: "We configure and set up the systems and workflows tailored specifically for your operations.",
+  },
+  {
+    step: 4,
+    title: "AI Workforce Deployed",
+    description: "We build the AI workforce according to your needs and it runs completely on auto. You focus on what matters.",
+  },
+];
+
 export default function AIAutomations() {
   return (
     <main className="min-h-screen">
@@ -39,41 +62,69 @@ export default function AIAutomations() {
         </motion.div>
       </section>
 
-      {/* What is OpenClaw */}
+      {/* How It Works - Workflow Chart */}
       <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px] bg-surface">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto"
+          className="max-w-4xl mx-auto"
         >
-          <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-6">
-            What is OpenClaw?
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-16 text-center">
+            How it works
           </h2>
-          <p className="font-[family-name:var(--font-body)] text-base text-muted leading-relaxed mb-6">
-            OpenClaw is a personal AI-powered automation system designed to streamline your daily operations.
-            From managing tasks to automating repetitive workflows, OpenClaw helps you focus on what matters most.
-          </p>
-          <ul className="space-y-4">
-            {[
-              "Automate repetitive tasks and save hours every week",
-              "Integrate with your existing tools and workflows",
-              "AI-powered decision making and task prioritization",
-              "Custom workflows tailored to your specific needs",
-            ].map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <span className="text-ai-violet mt-1">→</span>
-                <span className="font-[family-name:var(--font-body)] text-muted">
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
+
+          {/* Workflow Steps */}
+          <div className="relative">
+            {/* Connecting Line */}
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block md:left-1/2 md:-translate-x-px" />
+
+            <div className="space-y-12 md:space-y-16">
+              {workflowSteps.map((item, index) => (
+                <motion.div
+                  key={item.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative flex flex-col md:flex-row ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  } items-start md:items-center gap-6`}
+                >
+                  {/* Step Number */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                    <div className="w-12 h-12 rounded-full bg-ai-violet flex items-center justify-center">
+                      <span className="font-[family-name:var(--font-body)] text-sm font-semibold text-white">
+                        {item.step}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    className={`ml-20 md:ml-0 md:w-[calc(50%-3rem)] ${
+                      index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12 md:text-left"
+                    }`}
+                  >
+                    <h3 className="font-[family-name:var(--font-display)] text-xl font-medium text-primary mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="font-[family-name:var(--font-body)] text-sm text-muted leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block md:w-[calc(50%-3rem)]" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </section>
 
-      {/* Screenshots Placeholder */}
+      {/* Things You Can Achieve */}
       <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -82,11 +133,14 @@ export default function AIAutomations() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-12 text-center">
-            How it works
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-4 text-center">
+            Things you can achieve with AI Automations
           </h2>
+          <p className="font-[family-name:var(--font-body)] text-muted text-center mb-12">
+            Real examples of what OpenClaw can do for you
+          </p>
 
-          {/* Placeholder for screenshots */}
+          {/* Screenshots Grid */}
           <div className="grid gap-6 md:grid-cols-2">
             {[1, 2, 3, 4].map((num) => (
               <div
