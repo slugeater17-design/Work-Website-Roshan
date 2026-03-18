@@ -40,7 +40,7 @@ export default function SocialProof() {
             TRUSTED BY
           </span>
 
-          <div className="relative h-32 w-full max-w-4xl overflow-hidden">
+          <div className="relative h-32 w-full max-w-2xl overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -48,12 +48,12 @@ export default function SocialProof() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="absolute inset-0 flex items-center justify-center gap-4 sm:gap-6 md:gap-8"
+                className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-3 md:gap-4"
               >
                 {getVisibleBrands().map((index) => (
                   <div
                     key={brands[index].name}
-                    className="flex items-center justify-center h-28 w-48 sm:w-64 transition-opacity duration-300 hover:opacity-80"
+                    className="flex items-center justify-center h-28 w-32 sm:w-40 transition-opacity duration-300 hover:opacity-80"
                   >
                     <Image
                       src={brands[index].logo}
