@@ -96,9 +96,9 @@ const individualVentures: Venture[] = [
 const companyVentures: Venture[] = [
   {
     monogram: "CC",
-    title: "CA Custom",
+    title: "CA Customs",
     description:
-      "Branded merch for your team. End-to-end from concept to delivery, at any scale.",
+      "Creating Adam's merchandising wing. Branded merch for your team. End-to-end from concept to delivery, at any scale.",
     link: "#contact",
     linkLabel: "ca-customs",
     color: "blue",
@@ -114,11 +114,11 @@ const companyVentures: Venture[] = [
   },
   {
     monogram: "AI",
-    title: "AI Automation & Systems",
+    title: "AI Automations & Systems",
     description:
       "Enterprise AI systems. Strategy, implementation, and scale for your organization's workflows.",
-    link: "#contact",
-    linkLabel: "Consulting",
+    link: "/ai-automations",
+    linkLabel: "Learn more",
     color: "violet",
   },
   {
