@@ -126,7 +126,7 @@ const companyUseCases = [
 ];
 
 export default function AIAutomations() {
-  const [activeTab, setActiveTab] = useState<"individual" | "company">("individual");
+  const [activeTab, setActiveTab] = useState<"individual" | "company">("company");
   const useCases = activeTab === "individual" ? individualUseCases : companyUseCases;
 
   return (
