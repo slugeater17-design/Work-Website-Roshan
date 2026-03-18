@@ -6,12 +6,12 @@ import ScrollReveal from "./ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
 
 const brands = [
-  { name: "Famous Studios", logo: "/logos/famous.png" },
-  { name: "Emmay Entertainment", logo: "/logos/emmay.png" },
-  { name: "Nicko Cruises", logo: "/logos/nicko.png" },
+  { name: "Famous Studios", logo: "/logos/famous.png", url: "https://famousstudios.com/" },
+  { name: "Emmay Entertainment", logo: "/logos/emmay.png", url: "https://emmay.com/" },
+  { name: "Nicko Cruises", logo: "/logos/nicko.png", url: "https://www.nicko-cruises.de/en" },
   { name: "MushMeToo", logo: "/logos/mushmetoo.png" },
-  { name: "Hogarth Studios", logo: "/logos/hogarth.png" },
-  { name: "Michael Page", logo: "/logos/michaelpage.png" },
+  { name: "Hogarth Studios", logo: "/logos/hogarth.png", url: "https://www.wppproduction.com/" },
+  { name: "Michael Page", logo: "/logos/michaelpage.png", url: "https://www.michaelpage.co.in/" },
 ];
 
 export default function SocialProof() {
@@ -51,20 +51,37 @@ export default function SocialProof() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0 flex items-center justify-center gap-2 sm:gap-3 md:gap-4"
               >
-                {getVisibleBrands().map((index) => (
-                  <div
-                    key={brands[index].name}
-                    className="flex items-center justify-center h-28 w-32 sm:w-40 transition-opacity duration-300 hover:opacity-80"
-                  >
+                {getVisibleBrands().map((index) => {
+                  const brand = brands[index];
+                  const logoElement = (
                     <Image
-                      src={brands[index].logo}
-                      alt={brands[index].name}
+                      src={brand.logo}
+                      alt={brand.name}
                       width={320}
                       height={128}
                       className="object-contain max-h-24 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
                     />
-                  </div>
-                ))}
+                  );
+
+                  return brand.url ? (
+                    <a
+                      key={brand.name}
+                      href={brand.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center h-28 w-32 sm:w-40 transition-opacity duration-300 hover:opacity-80 cursor-pointer"
+                    >
+                      {logoElement}
+                    </a>
+                  ) : (
+                    <div
+                      key={brand.name}
+                      className="flex items-center justify-center h-28 w-32 sm:w-40 transition-opacity duration-300"
+                    >
+                      {logoElement}
+                    </div>
+                  );
+                })}
               </motion.div>
             </AnimatePresence>
           </div>
