@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import ScrollReveal from "./ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
 
 const brands = [
-  "Famous Studios",
-  "Emmay Entertainment",
-  "Nicko Cruises",
-  "MushMeToo",
-  "Hogarth Studios",
+  { name: "Famous Studios", logo: "/logos/famous.png" },
+  { name: "Emmay Entertainment", logo: "/logos/emmay.png" },
+  { name: "Nicko Cruises", logo: "/logos/nicko.png" },
+  { name: "MushMeToo", logo: "/logos/mushmetoo.png" },
+  { name: "Hogarth Studios", logo: "/logos/hogarth.png" },
 ];
 
 export default function SocialProof() {
@@ -22,7 +23,7 @@ export default function SocialProof() {
     return () => clearInterval(interval);
   }, []);
 
-  // Show 3 brands at a time on desktop, 1 on mobile
+  // Show 3 brands at a time on desktop
   const getVisibleBrands = () => {
     const indices = [];
     for (let i = 0; i < 3; i++) {
@@ -39,7 +40,7 @@ export default function SocialProof() {
             TRUSTED BY
           </span>
 
-          <div className="relative h-16 w-full max-w-3xl overflow-hidden">
+          <div className="relative h-20 w-full max-w-3xl overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -47,16 +48,20 @@ export default function SocialProof() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="absolute inset-0 flex items-center justify-center gap-4 sm:gap-6"
+                className="absolute inset-0 flex items-center justify-center gap-8 sm:gap-12 md:gap-16"
               >
                 {getVisibleBrands().map((index) => (
                   <div
-                    key={brands[index]}
-                    className="flex items-center justify-center border border-border px-7 py-4 transition-colors duration-300 hover:border-white/[0.15]"
+                    key={brands[index].name}
+                    className="flex items-center justify-center h-16 w-32 sm:w-40 transition-opacity duration-300 hover:opacity-80"
                   >
-                    <span className="font-[family-name:var(--font-body)] text-xs font-medium text-muted whitespace-nowrap">
-                      {brands[index]}
-                    </span>
+                    <Image
+                      src={brands[index].logo}
+                      alt={brands[index].name}
+                      width={160}
+                      height={64}
+                      className="object-contain max-h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 ))}
               </motion.div>
