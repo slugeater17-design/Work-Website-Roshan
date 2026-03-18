@@ -11,6 +11,7 @@ const brands = [
   { name: "Nicko Cruises", logo: "/logos/nicko.png" },
   { name: "MushMeToo", logo: "/logos/mushmetoo.png" },
   { name: "Hogarth Studios", logo: "/logos/hogarth.png" },
+  { name: "Michael Page", logo: "/logos/michaelpage.png" },
 ];
 
 export default function SocialProof() {
