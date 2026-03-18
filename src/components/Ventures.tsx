@@ -58,8 +58,8 @@ const individualVentures: Venture[] = [
     title: "FreelanCA",
     description:
       "Your money, sorted. Invoicing, taxes & financial OS built for freelancers.",
-    link: "https://freelanca.creatingadam.in",
-    linkLabel: "freelanca.creatingadam.in",
+    link: "https://apps.apple.com/in/app/freelanca/id6755485025",
+    linkLabel: "Download on App Store",
     color: "green",
     external: true,
   },
@@ -68,9 +68,10 @@ const individualVentures: Venture[] = [
     title: "House of Artists",
     description:
       "Commission an artist. Pick from curated creatives for custom, one-of-a-kind work.",
-    link: "#contact",
+    link: "https://creatingadam.in/pages/creating-adam-house-of-artists",
     linkLabel: "house-of-artists",
     color: "blue",
+    external: true,
   },
   {
     monogram: "WD",
@@ -83,11 +84,11 @@ const individualVentures: Venture[] = [
   },
   {
     monogram: "AI",
-    title: "AI Automation",
+    title: "AI Automations & Systems",
     description:
-      "Automate your workflow. Set up tools like Openclaw for your personal stack and daily operations.",
-    link: "#contact",
-    linkLabel: "Get in touch",
+      "Automate your workflow. Set up tools like OpenClo for your personal stack and daily operations.",
+    link: "/ai-automations",
+    linkLabel: "Learn more",
     color: "violet",
   },
 ];

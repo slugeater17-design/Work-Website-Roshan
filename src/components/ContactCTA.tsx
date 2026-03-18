@@ -16,7 +16,7 @@ export default function ContactCTA() {
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="mailto:hello@creatingadam.in"
+              href="mailto:roshan@creatingadam.in"
               className="rounded-full bg-primary px-8 py-3.5 font-[family-name:var(--font-body)] text-[13px] font-medium text-base transition-opacity hover:opacity-90"
             >
               Get in touch
@@ -29,26 +29,13 @@ export default function ContactCTA() {
             >
               Instagram
             </a>
-            <a
-              href="https://youtube.com/@creatingadam"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-6 py-3.5 font-[family-name:var(--font-body)] text-[13px] text-muted transition-colors hover:border-white/[0.15] hover:text-primary"
-            >
-              YouTube
-            </a>
-            <a
-              href="https://freelanca.creatingadam.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-6 py-3.5 font-[family-name:var(--font-body)] text-[13px] text-muted transition-colors hover:border-white/[0.15] hover:text-primary"
-            >
-              FreelanCA
-            </a>
           </div>
 
           <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
-            hello@creatingadam.in
+            +91-9820133408
+          </span>
+          <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
+            roshan@creatingadam.in
           </span>
 
           <div className="h-px w-10 bg-border" />
