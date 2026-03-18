@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const workflowSteps = [
   {
@@ -26,7 +27,108 @@ const workflowSteps = [
   },
 ];
 
+const individualUseCases = [
+  {
+    title: "Morning Brief",
+    description: "Automated daily summary of weather, calendar events, and news delivered to you every morning.",
+  },
+  {
+    title: "Shopping List",
+    description: "Collects grocery items from chat messages and organizes them into a shared document automatically.",
+  },
+  {
+    title: "Voice Journal",
+    description: "Converts your voice recordings into structured daily journal entries with AI organization.",
+  },
+  {
+    title: "Package Tracking",
+    description: "Monitors all your delivery statuses and sends you alerts when packages are near.",
+  },
+  {
+    title: "Email Summaries",
+    description: "Digests your unread messages and flags urgent items so you never miss what matters.",
+  },
+  {
+    title: "Receipt Logging",
+    description: "Extracts vendor and amount data from receipt photos into organized expense spreadsheets.",
+  },
+  {
+    title: "Smart Home Control",
+    description: "Triggers lights, devices, and home automation via simple chat commands.",
+  },
+  {
+    title: "Meal Planning",
+    description: "Suggests recipes based on preferences and automatically builds your weekly grocery list.",
+  },
+  {
+    title: "Document Assistant",
+    description: "Private local AI that analyzes contracts, files, and documents without sending data anywhere.",
+  },
+];
+
+const companyUseCases = [
+  {
+    title: "Meeting Transcription",
+    description: "Transcribes meeting audio and extracts action items with assigned owners automatically.",
+  },
+  {
+    title: "Brand Monitoring",
+    description: "Tracks brand mentions across social media with sentiment analysis reports.",
+  },
+  {
+    title: "Client Onboarding",
+    description: "Creates folders, sends welcome emails, and schedules calls automatically for new clients.",
+  },
+  {
+    title: "KPI Reports",
+    description: "Screenshots dashboards and posts key metrics to Slack or Discord on schedule.",
+  },
+  {
+    title: "Content Ideation",
+    description: "Generates blog topics, headlines, and content outlines based on your niche.",
+  },
+  {
+    title: "Draft Generation",
+    description: "Expands bullet-point outlines into full articles ready for review.",
+  },
+  {
+    title: "Image Generation",
+    description: "Creates on-brand social media visuals via AI APIs matching your style guide.",
+  },
+  {
+    title: "Content Repurposing",
+    description: "Adapts single posts for multiple platforms — LinkedIn, Twitter, Instagram, and more.",
+  },
+  {
+    title: "Community Replies",
+    description: "Drafts responses to common support questions for faster customer service.",
+  },
+  {
+    title: "Server Monitoring",
+    description: "Alerts your team when disk, CPU, or RAM exceed thresholds before issues occur.",
+  },
+  {
+    title: "CI/CD Monitoring",
+    description: "Notifies on build failures and deployment completions to keep your team informed.",
+  },
+  {
+    title: "PR Summaries",
+    description: "Reviews code changes automatically and suggests feedback for faster reviews.",
+  },
+  {
+    title: "Product Research",
+    description: "Compiles comparison reports on tools, services, and competitors automatically.",
+  },
+  {
+    title: "Browser Automation",
+    description: "Fills forms and automates repetitive admin tasks on internal tools.",
+  },
+];
+
 export default function AIAutomations() {
+  const [activeTab, setActiveTab] = useState<"individual" | "company">("individual");
+  const useCases = activeTab === "individual" ? individualUseCases : companyUseCases;
+
   return (
     <main className="min-h-screen">
       {/* Header */}
@@ -124,7 +226,7 @@ export default function AIAutomations() {
         </motion.div>
       </section>
 
-      {/* Things You Can Achieve */}
+      {/* Things You Can Achieve - Tabbed */}
       <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -134,25 +236,66 @@ export default function AIAutomations() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-4 text-center">
-            Things you can achieve with AI Automations
+            Things you can do with OpenClaw
           </h2>
-          <p className="font-[family-name:var(--font-body)] text-muted text-center mb-12">
-            Real examples of what OpenClaw can do for you
+          <p className="font-[family-name:var(--font-body)] text-muted text-center mb-8">
+            Real automation examples for your personal or business needs
           </p>
 
-          {/* Screenshots Grid */}
-          <div className="grid gap-6 md:grid-cols-2">
-            {[1, 2, 3, 4].map((num) => (
-              <div
-                key={num}
-                className="aspect-video bg-surface border border-border flex items-center justify-center"
+          {/* Tabs */}
+          <div className="flex justify-center mb-12">
+            <div className="flex">
+              <button
+                onClick={() => setActiveTab("individual")}
+                className={`rounded-full px-8 py-3.5 font-[family-name:var(--font-body)] text-sm font-medium transition-all duration-300 ${
+                  activeTab === "individual"
+                    ? "bg-ai-violet text-white"
+                    : "border border-border text-muted hover:border-white/[0.15] hover:text-primary"
+                }`}
               >
-                <span className="font-[family-name:var(--font-body)] text-sm text-dim">
-                  Screenshot {num} — Coming Soon
-                </span>
-              </div>
-            ))}
+                For Individuals
+              </button>
+              <button
+                onClick={() => setActiveTab("company")}
+                className={`rounded-full px-8 py-3.5 font-[family-name:var(--font-body)] text-sm font-medium transition-all duration-300 ${
+                  activeTab === "company"
+                    ? "bg-ai-violet text-white"
+                    : "border border-border text-muted hover:border-white/[0.15] hover:text-primary"
+                }`}
+              >
+                For Companies
+              </button>
+            </div>
           </div>
+
+          {/* Use Cases Grid */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {useCases.map((useCase, index) => (
+                <motion.div
+                  key={useCase.title}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className="group border border-border bg-surface p-5 transition-all duration-300 hover:border-ai-violet/30 hover:bg-surface-raised"
+                >
+                  <h3 className="font-[family-name:var(--font-display)] text-lg font-medium text-primary mb-2">
+                    {useCase.title}
+                  </h3>
+                  <p className="font-[family-name:var(--font-body)] text-[13px] text-muted leading-relaxed">
+                    {useCase.description}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </motion.div>
       </section>
 
