@@ -196,9 +196,6 @@ export default function Ventures() {
     <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px]">
       <ScrollReveal>
         <div className="mb-12 flex flex-col items-center gap-6">
-          <span className="font-[family-name:var(--font-body)] text-[11px] font-semibold tracking-[1.5px] text-dim">
-            ARE YOU
-          </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl font-medium tracking-[-0.03em] text-primary sm:text-[44px]">
             Are you?
           </h2>
