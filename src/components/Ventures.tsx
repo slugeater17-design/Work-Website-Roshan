@@ -121,16 +121,6 @@ const companyVentures: Venture[] = [
     linkLabel: "Learn more",
     color: "violet",
   },
-  {
-    monogram: "CA",
-    title: "Creating Adam",
-    description:
-      "Corporate gifting. Premium artist-designed apparel for clients, events, and team milestones.",
-    link: "https://creatingadam.in",
-    linkLabel: "creatingadam.in",
-    color: "blue",
-    external: true,
-  },
 ];
 
 function VentureCard({
