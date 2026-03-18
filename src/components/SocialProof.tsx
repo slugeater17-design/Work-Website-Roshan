@@ -6,12 +6,13 @@ import ScrollReveal from "./ScrollReveal";
 import { motion, AnimatePresence } from "framer-motion";
 
 const brands = [
-  { name: "Famous Studios", logo: "/logos/famous.png", url: "https://famousstudios.com/" },
+  { name: "Michael Page", logo: "/logos/michaelpage.png", url: "https://www.michaelpage.co.in/" },
+  { name: "Hogarth Studios", logo: "/logos/hogarth.png", url: "https://www.wppproduction.com/" },
   { name: "Emmay Entertainment", logo: "/logos/emmay.png", url: "https://emmay.com/" },
+  { name: "Famous Studios", logo: "/logos/famous.png", url: "https://famousstudios.com/" },
+  { name: "Studio 404", logo: "/logos/studio404.png" },
   { name: "Nicko Cruises", logo: "/logos/nicko.png", url: "https://www.nicko-cruises.de/en" },
   { name: "MushMeToo", logo: "/logos/mushmetoo.png" },
-  { name: "Hogarth Studios", logo: "/logos/hogarth.png", url: "https://www.wppproduction.com/" },
-  { name: "Michael Page", logo: "/logos/michaelpage.png", url: "https://www.michaelpage.co.in/" },
 ];
 
 export default function SocialProof() {
