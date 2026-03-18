@@ -32,7 +32,7 @@ export default function ContactCTA() {
           </div>
 
           <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
-            +91-9820133408
+            +91 9820134048
           </span>
           <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
             roshan@creatingadam.in

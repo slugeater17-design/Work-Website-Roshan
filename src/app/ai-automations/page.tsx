@@ -327,7 +327,7 @@ export default function AIAutomations() {
       <footer className="px-6 py-12 sm:px-12 md:px-[120px] border-t border-border">
         <div className="flex flex-col items-center gap-4">
           <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
-            +91-9820133408
+            +91 9820134048
           </span>
           <span className="font-[family-name:var(--font-body)] text-[13px] text-dim">
             roshan@creatingadam.in
