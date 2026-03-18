@@ -75,9 +75,9 @@ const individualVentures: Venture[] = [
   },
   {
     monogram: "WD",
-    title: "Website Design",
+    title: "Website Design UI/UX",
     description:
-      "Get online. Fast, beautiful sites that actually convert — your portfolio, store, or personal brand.",
+      "Conceptualisation → Design → Execution. Fast, beautiful sites that actually convert — your portfolio, store, or personal brand.",
     link: "#contact",
     linkLabel: "Get in touch",
     color: "amber",
@@ -105,9 +105,9 @@ const companyVentures: Venture[] = [
   },
   {
     monogram: "WD",
-    title: "Website Design",
+    title: "Website Design UI/UX",
     description:
-      "Ship your company site. Fast, responsive, and built to scale with your business.",
+      "Conceptualisation → Design → Execution. Fast, responsive, and built to scale with your business.",
     link: "#contact",
     linkLabel: "Get in touch",
     color: "amber",
