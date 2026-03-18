@@ -236,7 +236,7 @@ export default function AIAutomations() {
           className="max-w-4xl mx-auto"
         >
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-4 text-center">
-            Things you can do with OpenClaw
+            Things you can do with our AI Automation Systems
           </h2>
           <p className="font-[family-name:var(--font-body)] text-muted text-center mb-8">
             Real automation examples for your personal or business needs
