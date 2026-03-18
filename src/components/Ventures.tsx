@@ -95,13 +95,13 @@ const individualVentures: Venture[] = [
 
 const companyVentures: Venture[] = [
   {
-    monogram: "CC",
-    title: "CA Customs",
+    monogram: "AI",
+    title: "AI Automations & Systems",
     description:
-      "Creating Adam's merchandising wing. Branded merch for your team. End-to-end from concept to delivery, at any scale.",
-    link: "#contact",
-    linkLabel: "ca-customs",
-    color: "blue",
+      "Enterprise AI systems. Strategy, implementation, and scale for your organization's workflows.",
+    link: "/ai-automations",
+    linkLabel: "Learn more",
+    color: "violet",
   },
   {
     monogram: "WD",
@@ -113,13 +113,13 @@ const companyVentures: Venture[] = [
     color: "amber",
   },
   {
-    monogram: "AI",
-    title: "AI Automations & Systems",
+    monogram: "CC",
+    title: "CA Customs",
     description:
-      "Enterprise AI systems. Strategy, implementation, and scale for your organization's workflows.",
-    link: "/ai-automations",
-    linkLabel: "Learn more",
-    color: "violet",
+      "Creating Adam's merchandising wing. Corporate gifting. Premium artist-designed apparel for clients, events, and team milestones.",
+    link: "#contact",
+    linkLabel: "ca-customs",
+    color: "blue",
   },
 ];
 
