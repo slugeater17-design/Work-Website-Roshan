@@ -125,8 +125,36 @@ const companyUseCases = [
   },
 ];
 
+const dashboardCards = [
+  {
+    id: "ai-workforce",
+    title: "AI Workforce",
+    description: "Monitor all your AI agents in one place. See which tasks they're handling, their status, and performance metrics.",
+    image: "/openclaw/ai-workforce.png"
+  },
+  {
+    id: "pipeline",
+    title: "Pipeline Flows",
+    description: "Visualize your automation pipelines. Track data flow between systems and identify bottlenecks instantly.",
+    image: "/openclaw/pipeline.png"
+  },
+  {
+    id: "newsletter",
+    title: "Newsletter",
+    description: "Automated content curation and distribution. Your AI assembles and sends newsletters on schedule.",
+    image: "/openclaw/newsletter.png"
+  },
+  {
+    id: "costs",
+    title: "Usage & Costs",
+    description: "Track API usage, compute costs, and ROI across all your automations. Full transparency on spending.",
+    image: "/openclaw/costs.png"
+  },
+];
+
 export default function AIAutomations() {
   const [activeTab, setActiveTab] = useState<"individual" | "company">("company");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const useCases = activeTab === "individual" ? individualUseCases : companyUseCases;
 
   return (
@@ -225,6 +253,101 @@ export default function AIAutomations() {
           </div>
         </motion.div>
       </section>
+
+      {/* AI Command Center - Dashboard Cards */}
+      <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-6xl mx-auto"
+        >
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-medium tracking-[-0.03em] text-primary sm:text-4xl mb-4 text-center">
+            Your Personal AI Command Center
+          </h2>
+          <p className="font-[family-name:var(--font-body)] text-muted text-center mb-16">
+            Every client gets a custom dashboard to monitor their AI workforce in real time
+          </p>
+
+          {/* Dashboard Cards Grid */}
+          <div className="grid gap-8 md:grid-cols-2">
+            {dashboardCards.map((card, index) => (
+              <motion.div
+                key={card.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group cursor-pointer"
+                onClick={() => setSelectedImage(card.image)}
+              >
+                {/* Card Image with Glow */}
+                <div className="relative rounded-lg overflow-hidden border border-border bg-surface transition-all duration-300 hover:border-indigo-500/70 shadow-[0_0_15px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.6)]">
+                  <div className="aspect-[16/10] overflow-hidden">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                    <span className="font-[family-name:var(--font-body)] text-white text-sm font-medium">
+                      Click to view full size
+                    </span>
+                  </div>
+                </div>
+
+                {/* Card Description */}
+                <div className="mt-4">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-medium text-primary mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="font-[family-name:var(--font-body)] text-sm text-muted leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Full Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-pointer"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative max-w-6xl max-h-[90vh] w-full"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 text-white hover:text-ai-violet transition-colors font-[family-name:var(--font-body)] text-sm"
+              >
+                Close ✕
+              </button>
+              <img
+                src={selectedImage}
+                alt="Workflow screenshot"
+                className="w-full h-full object-contain rounded-lg"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Things You Can Achieve - Tabbed */}
       <section className="px-6 py-24 sm:px-12 md:px-[120px] md:py-[100px]">
